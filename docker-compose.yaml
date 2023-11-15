@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  abhay-springboot-container:
+    image: gautam-spring-boot-docker-compose:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/gautam-springboot-container
+    ports:
+      - "8080-8100:8080"

@@ -1,4 +1,3 @@
-FROM httpd:latest
-COPY Case-study_app/index.html /var/www/html/
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
-EXPOSE 80
+FROM tomcat:latest
+COPY ./target/mvn-hello-world.war /usr/local/tomcat/webapps
+RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
